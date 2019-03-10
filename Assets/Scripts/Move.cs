@@ -64,11 +64,11 @@ public class Move : MonoBehaviour
 
         if (axis == "X")
         {
-            position.x = Mathf.Round(position.x / 16) * 16;
+            position.x = Mathf.Round(position.x / 8) * 8;
         }
         else
         {
-            position.y = Mathf.Round(position.y / 16) * 16;
+            position.y = Mathf.Round(position.y / 8) * 8;
         }
 
         _rigidbody2D.position = position;
