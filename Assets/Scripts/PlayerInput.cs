@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
+    public AudioClip soundIdle;
+    public AudioClip soundMoving;
+
     private Move _move;
+    private AudioSource _audioSource;
 
     private bool _isMovingUp = false;
     private bool _isMovingDown = false;
@@ -14,16 +18,21 @@ public class PlayerInput : MonoBehaviour
     private void Awake()
     {
         _move = GetComponent<Move>();
+        _audioSource = GetComponent<AudioSource>();
+        PlaySound(soundIdle);
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetAxisRaw("Vertical") > 0)
         {
             if (!_isMovingUp)
             {
                 _move.Up();
+
+                PlaySound(soundMoving);
+
                 _isMovingUp = true;
             }
         }
@@ -33,6 +42,9 @@ public class PlayerInput : MonoBehaviour
             if (!_isMovingDown)
             {
                 _move.Down();
+
+                PlaySound(soundMoving);
+
                 _isMovingDown = true;
             }
         }
@@ -42,6 +54,9 @@ public class PlayerInput : MonoBehaviour
             if (!_isMovingRight)
             {
                 _move.Right();
+
+                PlaySound(soundMoving);
+
                 _isMovingRight = true;
             }
         }
@@ -51,6 +66,9 @@ public class PlayerInput : MonoBehaviour
             if (!_isMovingLeft)
             {
                 _move.Left();
+
+                PlaySound(soundMoving);
+
                 _isMovingLeft = true;
             }
         }
@@ -60,11 +78,22 @@ public class PlayerInput : MonoBehaviour
             if (_isMovingUp || _isMovingDown || _isMovingRight || _isMovingLeft)
             {
                 _move.Stop();
+
+                PlaySound(soundIdle);
+
                 _isMovingUp = false;
                 _isMovingDown = false;
                 _isMovingRight = false;
                 _isMovingLeft = false;
             }
         }
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (!_audioSource.enabled) return;
+
+        _audioSource.clip = clip;
+        _audioSource.Play();
     }
 }
