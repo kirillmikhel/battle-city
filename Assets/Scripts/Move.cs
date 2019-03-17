@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    public float speed = 50;
+    public float speed;
+    public Vector2 direction;
 
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
@@ -14,19 +15,21 @@ public class Move : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         
+        direction = Vector2.up;
+
         Stop();
     }
 
     public void Up()
     {
-        _rigidbody2D.velocity = speed * Vector2.up;
+        SetDirection(Vector2.up);
         AlignToGrid("X");
         TriggerAnimation("Up");
     }
 
     public void Down()
     {
-        _rigidbody2D.velocity = speed * Vector2.down;
+        SetDirection(Vector2.down);
         AlignToGrid("X");
         TriggerAnimation("Down");
     }
@@ -34,22 +37,28 @@ public class Move : MonoBehaviour
 
     public void Right()
     {
-        _rigidbody2D.velocity = speed * Vector2.right;
+        SetDirection(Vector2.right);
         AlignToGrid("Y");
         TriggerAnimation("Right");
     }
 
     public void Left()
     {
-        _rigidbody2D.velocity = speed * Vector2.left;
+        SetDirection(Vector2.left);
         AlignToGrid("Y");
         TriggerAnimation("Left");
     }
 
     public void Stop()
     {
-        _rigidbody2D.velocity = Vector2.zero;
+        _rigidbody2D.velocity = speed * Vector2.zero;
         _animator.speed = 0;
+    }
+
+    private void SetDirection(Vector2 _direction)
+    {
+        direction = _direction;
+        _rigidbody2D.velocity = speed * direction;
     }
 
     private void TriggerAnimation(string direction)

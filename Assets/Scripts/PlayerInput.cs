@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    public AudioClip soundIdle;
-    public AudioClip soundMoving;
-
     private Move _move;
+    private Shooting _shooting;
     private AudioSource _audioSource;
+    private SoundController _soundController;
 
     private bool _isMovingUp = false;
     private bool _isMovingDown = false;
@@ -17,21 +16,29 @@ public class PlayerInput : MonoBehaviour
 
     private void Awake()
     {
+        _soundController = GetComponent<SoundController>();
         _move = GetComponent<Move>();
+        _shooting = GetComponent<Shooting>();
         _audioSource = GetComponent<AudioSource>();
-        PlaySound(soundIdle);
+        
+//        _soundController.audioIdle.Play();
     }
 
     // Update is called once per frame
     private void Update()
     {
+        if (Input.GetButton("Shoot"))
+        {
+            _shooting.Shoot();
+        }
+
         if (Input.GetAxisRaw("Vertical") > 0)
         {
             if (!_isMovingUp)
             {
                 _move.Up();
 
-                PlaySound(soundMoving);
+//                _soundController.audioMoving.Play();
 
                 _isMovingUp = true;
             }
@@ -43,7 +50,7 @@ public class PlayerInput : MonoBehaviour
             {
                 _move.Down();
 
-                PlaySound(soundMoving);
+//                _soundController.audioMoving.Play();
 
                 _isMovingDown = true;
             }
@@ -55,7 +62,7 @@ public class PlayerInput : MonoBehaviour
             {
                 _move.Right();
 
-                PlaySound(soundMoving);
+//                _soundController.audioMoving.Play();
 
                 _isMovingRight = true;
             }
@@ -67,7 +74,7 @@ public class PlayerInput : MonoBehaviour
             {
                 _move.Left();
 
-                PlaySound(soundMoving);
+//                _soundController.audioMoving.Play();
 
                 _isMovingLeft = true;
             }
@@ -79,7 +86,7 @@ public class PlayerInput : MonoBehaviour
             {
                 _move.Stop();
 
-                PlaySound(soundIdle);
+//                _soundController.audioMoving.Play();
 
                 _isMovingUp = false;
                 _isMovingDown = false;
@@ -87,13 +94,5 @@ public class PlayerInput : MonoBehaviour
                 _isMovingLeft = false;
             }
         }
-    }
-
-    private void PlaySound(AudioClip clip)
-    {
-        if (!_audioSource.enabled) return;
-
-        _audioSource.clip = clip;
-        _audioSource.Play();
     }
 }
