@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public GameObject explosionPrefab;
+
     public Sprite[] sprites;
     public float speed;
     public Vector2 direction;
@@ -32,6 +34,13 @@ public class Bullet : MonoBehaviour
         if (damageable != null)
         {
             damageable.GetDamage();
+        }
+        else if (explosionPrefab)
+        {
+            var explosion = Instantiate(explosionPrefab, new Vector3(transform.position.x, transform.position.y, -1.0f),
+                Quaternion.identity);
+
+            explosion.transform.parent = GameObject.Find("Explosions").transform;
         }
 
         shooter.DestroyBullet(gameObject);

@@ -235,14 +235,14 @@ TextureImporter:
     21300460: objects_230
     21300462: objects_231
     21300464: objects_232
-    21300466: objects_233
-    21300468: objects_234
-    21300470: objects_235
-    21300472: objects_236
+    21300466: explosion_rise_1
+    21300468: explosion_rise_2
+    21300470: explosion_rise_3
+    21300472: explosion_middle
     21300474: objects_237
-    21300476: objects_238
-    21300478: objects_239
-    21300480: objects_240
+    21300476: explosion_down_3
+    21300478: explosion_down_2
+    21300480: explosion_down_1
     21300482: objects_241
     21300484: objects_242
     21300486: objects_243
@@ -3618,10 +3618,10 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: objects_233
+      name: explosion_rise_1
       rect:
         serializedVersion: 2
-        x: 224
+        x: 228
         y: 224
         width: 32
         height: 32
@@ -3632,10 +3632,10 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: objects_234
+      name: explosion_rise_2
       rect:
         serializedVersion: 2
-        x: 256
+        x: 260
         y: 224
         width: 32
         height: 32
@@ -3646,10 +3646,10 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: objects_235
+      name: explosion_rise_3
       rect:
         serializedVersion: 2
-        x: 288
+        x: 292
         y: 224
         width: 32
         height: 32
@@ -3660,10 +3660,24 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: objects_236
+      name: explosion_middle
       rect:
         serializedVersion: 2
-        x: 320
+        x: 324
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosion_down_3
+      rect:
+        serializedVersion: 2
+        x: 388
         y: 224
         width: 32
         height: 32
@@ -3674,10 +3688,10 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: objects_237
+      name: explosion_down_2
       rect:
         serializedVersion: 2
-        x: 352
+        x: 420
         y: 224
         width: 32
         height: 32
@@ -3688,38 +3702,10 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: objects_238
+      name: explosion_down_1
       rect:
         serializedVersion: 2
-        x: 384
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: objects_239
-      rect:
-        serializedVersion: 2
-        x: 416
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: objects_240
-      rect:
-        serializedVersion: 2
-        x: 448
+        x: 452
         y: 224
         width: 32
         height: 32
@@ -3762,34 +3748,6 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: objects_246
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: objects_247
-      rect:
-        serializedVersion: 2
-        x: 384
         y: 192
         width: 32
         height: 32

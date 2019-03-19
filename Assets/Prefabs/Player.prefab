@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114532145120788768}
   - component: {fileID: 114232044486998010}
   - component: {fileID: 114367968751663560}
+  - component: {fileID: 114113087543944012}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -109,6 +110,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114113087543944012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1335729311853924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 394abf58810949c897d088124ec3830c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1731379674472358, guid: 9fbf6bf403afd47928a35d95505419c4,
+    type: 2}
+  hitPoints: 1
 --- !u!114 &114195120985933622
 MonoBehaviour:
   m_ObjectHideFlags: 1
