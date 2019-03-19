@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 61464114044904972}
   - component: {fileID: 114642325481705964}
   - component: {fileID: 114724923593873012}
+  - component: {fileID: 114418803561748018}
+  - component: {fileID: 114376901795889834}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged
@@ -107,6 +109,28 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114376901795889834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1127624701660082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ef59e12940a446aa8906f8db13f9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114418803561748018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1127624701660082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9442bd1d8355e48398def247a8e3cb57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114642325481705964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -119,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
+  direction: {x: 0, y: 0}
 --- !u!114 &114724923593873012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,6 +157,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1596585301799302, guid: 5161c553a270a4e23abf260b5899f6fb,
     type: 2}
+  maxBullets: 1
+  bulletCount: 0
+  fireRatePerSecond: 1
 --- !u!212 &212385460698800552
 SpriteRenderer:
   m_ObjectHideFlags: 1

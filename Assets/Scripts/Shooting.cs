@@ -12,9 +12,16 @@ public class Shooting : MonoBehaviour
     public int bulletCount = 0;
 
     public float fireRatePerSecond = 1f;
-    
+
     private float _lastShootingTime = 0f;
-    
+
+    private SoundController _soundController;
+
+    public void Awake()
+    {
+        _soundController = GetComponent<SoundController>();
+    }
+
     public void Shoot()
     {
         if (bulletCount >= maxBullets) return;
@@ -34,7 +41,8 @@ public class Shooting : MonoBehaviour
         bullet.GetComponent<Bullet>().direction = direction;
         bullet.GetComponent<Bullet>().shooter = this;
 
-        GetComponent<SoundController>().audioShoot.Play();
+        if (_soundController != null)
+            _soundController.audioShoot.Play();
 
         bulletCount++;
     }
@@ -43,7 +51,8 @@ public class Shooting : MonoBehaviour
     {
         bulletCount--;
 
-        GetComponent<SoundController>().audioHitSteel.Play();
+        if (_soundController != null)
+            _soundController.audioHitSteel.Play();
 
         Destroy(bullet);
     }
