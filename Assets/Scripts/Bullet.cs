@@ -27,6 +27,13 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.GetComponent<Shooting>() == shooter) return;
 
+        var damageable = other.gameObject.GetComponent<Damageable>();
+
+        if (damageable != null)
+        {
+            damageable.GetDamage();
+        }
+
         shooter.DestroyBullet(gameObject);
     }
 }
